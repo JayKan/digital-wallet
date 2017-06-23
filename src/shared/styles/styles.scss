@@ -1,0 +1,454 @@
+@charset "utf-8";
+@import 'utils/variables';
+@import 'utils/core';
+
+
+.header-toggle {
+  background: transparent;
+  border: 0.15rem solid $dark-grey;
+  border-left: 0;
+  border-right: 0;
+  cursor: pointer;
+  font-size: 0;
+  height: 1.5rem;
+  margin-right: 1rem;
+  position: relative;
+  width: 2rem;
+  outline: none;
+
+  &::after {
+    background: $dark-grey;
+    content: '';
+    height: 0.15rem;
+    left: 0;
+    margin-top: -0.075rem;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+  }
+}
+
+.demo-sidebar {
+  padding: 1.2em 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+
+  &.ng-sidebar--opened.ng-sidebar--over {
+    box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
+  }
+
+  &.ng-sidebar--animate.ng-sidebar {
+    transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+  }
+  &.extra-bigger {
+    width: 500px;
+    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+    transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+  }
+  &.bigger {
+    width: 400px;
+    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+    transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+  }
+  &.smaller {
+    width: 300px;
+    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+    transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+  }
+  &.default {
+    width: 200px;
+    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+    transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+  }
+}
+
+.demo-contents {
+  padding: 1.64em 2em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    overflow: auto;
+  }
+
+  &.no-border {
+    border-bottom: none;
+
+    div.header-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 300;
+    }
+  }
+
+
+  p.logo {
+    background: transparent url(https://www.paypalobjects.com/images/shared/paypal-logo-129x32.svg) top center no-repeat;
+    background-size: auto 28px;
+    width: 120px;
+    height: 32px;
+    display: inline-block;
+  }
+
+  .checkout-price {
+    float: right;
+    padding: 5px 0;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  .link {
+    color: #009cde;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .currency {
+    margin-top: -5px;
+    font-weight: 500;
+    color: gray;
+  }
+}
+
+.row {
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+
+  .container {
+    position: relative;
+    display: inline-block;
+    float: right;
+  }
+
+  label {
+    background: transparent url('https://www.paypalobjects.com/images/checkout/hermes/hermes_window_sprite_v16_2x.png') top left no-repeat;
+    background-size: 500px 700px;
+  }
+
+  label {
+    width: 49px;
+    height: 36px;
+    background-position: -383px -3px;
+    display: inline-block;
+    float: right;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+    &:checked + label {
+      //background-position: -383px -3px;
+    }
+  }
+}
+
+header.manage-wallet {
+  //display: flex;
+  //justify-content: space-between;
+}
+
+header.manage-wallet,
+header.update-wallet {
+  padding: 0.3em 2em 1.3em 2em;
+}
+header.add-wallet {
+  padding: 0.3em 1em 1.3em 1em;
+}
+// ===========================
+.wallet-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .add {
+    color: #009cde;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    padding-left: 0;
+    float: left;
+    position: relative;
+    font-weight: 300;
+    margin-bottom: 8px;
+
+    .fa {
+      font-size: 9px;
+      font-weight: 100;
+    }
+  }
+
+  .manage {
+    color: #009cde;
+    cursor: pointer;
+    float: right;
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+    margin-bottom: 8px;
+    display: inline-flex;
+    align-items: center;
+
+  }
+}
+
+.credit-card-row {
+  padding: 1.5em 2em;
+
+  .link {
+    color: #009cde;
+    font-size: 14px;
+    font-weight: 400;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.wallet-section,
+.manage-section {
+  padding: 0 2em;
+}
+
+.close-icon {
+  float: right;
+  width: 13px;
+  height: 13px;
+  margin-top: 11px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.fa.manage-icon,
+.fa.add-icon {
+  float: left;
+  font-size: 20px;
+  margin-top: 5px;
+  color: $dark-grey;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.vertical {
+  background: #e4e4e4;
+  padding-top: 6px;
+  padding-left: 10px;
+  padding-bottom: 3px;
+  border-radius: 4px;
+}
+
+.card {
+  background: transparent url('https://www.paypalobjects.com/images/checkout/hermes/sprite_logos_wallet_v11_2x.png') top left no-repeat;
+  background-size: $card-width 1180px;
+  display: inline-block;
+
+  &:nth-child(1) {
+    width: 60px;
+    height: 34px;
+  }
+
+  &:nth-child(2) {
+    width: 62px;
+    height: 34px;
+  }
+
+  &:nth-child(3) {
+    width: 42px;
+    height: 35px;
+  }
+
+  &:nth-child(4) {
+    width: 62px;
+    height: 34px;
+  }
+
+  &:nth-child(5) {
+    width: 58px;
+    height: 35px;
+  }
+}
+
+@for $i from 1 through 5 {
+  .card:nth-child(#{$i}) {
+    background-position: 0 ($card-height * $i) * -1;
+  }
+}
+
+.card-type {
+  position: absolute;
+  transition: all 0.6s ease;
+  background: transparent url('https://www.paypalobjects.com/images/checkout/hermes/sprite_logos_wallet_v11_2x.png') top left no-repeat;
+  background-size: $card-width 1180px;
+  display: inline-block;
+
+  &.visa-type {
+    background-position: 0 -42px;
+    width: 60px;
+    height: 40px;
+    top: 15px;
+    right: 0;
+  }
+
+  &.master-type {
+    background-position: 0 -84px;
+    width: 62px;
+    height: 41px;
+    top: 20px;
+    right: 0;
+  }
+
+  &.american-express {
+    background-position: 0 -126px;
+    width: 42px;
+    height: 40px;
+    top: 15px;
+    right: 0;
+  }
+
+  &.discover {
+    background-position: 0 -168px;
+    width: 61px;
+    height: 41px;
+    top: 15px;
+    right: 0;
+  }
+}
+
+.credit-card-type {
+  position: absolute;
+  transition: all 0.6s ease;
+  background: transparent url('https://www.paypalobjects.com/images/checkout/hermes/sprite_logos_wallet_v11_2x.png') top left no-repeat;
+  background-size: $card-width 1180px;
+  display: inline-block;
+
+  &.visa-type {
+    background-position: 0 -42px;
+    width: 60px;
+    height: 40px;
+    top: 2px;
+    right: 2px;
+  }
+
+  &.master-type {
+    background-position: 0 -84px;
+    width: 62px;
+    height: 41px;
+    top: 2px;
+    right: 0;
+  }
+
+  &.american-express {
+    background-position: 0 -126px;
+    width: 42px;
+    height: 40px;
+    top: 2px;
+    right: 0;
+  }
+
+  &.discover {
+    background-position: 0 -168px;
+    width: 61px;
+    height: 41px;
+    top: 2px;
+    right: 0;
+  }
+}
+
+// -------- Form related
+form.update-form,
+form.add-form {
+  padding: 1em;
+
+  .input-row {
+    display: block;
+    position: relative;
+    margin-bottom: 15px;
+    overflow: auto;
+  }
+
+  .form-group {
+    display: block;
+    position: relative;
+    overflow: auto;
+  }
+
+  label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 3px;
+    font-size: 14px;
+  }
+
+  .half {
+    display: block;
+    position: relative;
+    min-height: 1px;
+    width: 50%;
+    float: left;
+  }
+
+  .form-control {
+    display: block;
+    width: 100%;
+    height: 44px;
+    padding: 10px 12px;
+    font-size: 15px;
+    line-height: 1.4;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    &:focus {
+      outline: none;
+      border: 1px solid #009cde;
+    }
+  }
+
+  button[type="submit"] {
+    margin-top: 5px;
+    color: #fff;
+    background-color: #337ab7;
+    display: inline-block;
+    padding: 14px 12px;
+    margin-bottom: 0;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.4;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    width: 100%;
+    user-select: none;
+    border: 1px solid #2e6da4;
+    border-radius: 4px;
+    outline: none;
+
+    &[disabled] {
+      cursor: not-allowed;
+      filter: alpha(opacity=65);
+      box-shadow: none;
+      opacity: .65;
+      &:hover {
+        background-color: #337ab7;
+      }
+    }
+
+    &:hover  {
+      background-color: #253B80;
+    }
+  }
+}
